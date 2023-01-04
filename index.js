@@ -26,6 +26,13 @@ app.post("/todos", (req,res) => {
   return res.json(todos)
 })
 
+app.put("/todos/:id", (req,res) => {
+  const {id} = req.params
+  const index = todos.findIndex((todo) => todo.id === id)
+  todos[index].completed = !todos[index].completed
+  return res.json(todos[index])
+})
+
 app.listen(3000, () => {
   console.log("Now running on Port 3000")
 })
