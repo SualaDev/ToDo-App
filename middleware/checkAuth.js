@@ -1,3 +1,4 @@
+//The MiddleWare Section
 module.exports = (req,res,next) => {
   const authenticated = req.header("authenticated")
 
